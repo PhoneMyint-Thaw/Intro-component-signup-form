@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+   <div class="left">
+    <div class="text">
+      <h1>Learn to code by watching others</h1>
+
+      See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. 
+    </div>
+  
+   </div>
+   <div class="right">
+    <div class="try">Try it free 7 days then $20/mo. thereafter</div>
+
+   <form action="" id="">
+    <div class="input">
+      <input type="text" name="" id="fname" placeholder="First Name">
+      <img src="images/icon-error.svg" alt="" class="icon ficon">
+      <small class="error fnameerror"><i>First name connot be empty</i></small>
+    </div>
+    <div class="input">
+      <input type="text" name="" id="lname" placeholder="Last Name">
+      <img src="images/icon-error.svg" alt="" class="licon icon">
+      <small class="lnameerror error"><i>First name connot be empty</i></small>
+    </div>
+    <div class="input">
+      <input type="email" name="" id="email" placeholder="Email Address">
+      <img src="images/icon-error.svg" alt="" class="eicon icon">
+      <small class="emailerror error"><i>First name connot be empty</i></small>
+    </div>
+   <div class="input">
+      <input type="text" name="" id="password" placeholder="Password">
+      <img src="images/icon-error.svg" alt="" class="picon icon">
+      <small class="passworderror error"><i>First name connot be empty</i></small>
+   </div>
+   
+    <input type="button" value="Claim your free trial" class="btn">
+
+    <small>By clicking the button, you are agreeing to our Terms and Services</small>
+   </form>
+    
+   </div>
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+
+  <script>
+    var mailformat = /^[A-Za-z0-9.!#$%'&*+/=?^_`{|}~-]+@[A-Za-z0-9]+(?:\.[A-Za-z0-9]+)*$/;
+
+    document.querySelector(".btn").onclick = () => {
+      var fname = document.querySelector("#fname").value;
+      var lname = document.querySelector("#lname").value;
+      var email = document.querySelector("#email").value;
+      var password = document.querySelector("#password").value;
+
+
+      if (!fname) {
+        document.querySelector(".fnameerror").style.display = "block";
+        document.querySelector(".ficon").style.display = "block";
+        document.querySelector("#fname").style.border = "1px solid hsl(0, 100%, 74%)"
+      } else {
+        document.querySelector(".fnameerror").style.display = "none";
+        document.querySelector(".ficon").style.display = "none";
+      }
+
+      if (!lname) {
+        document.querySelector(".lnameerror").style.display = "block";
+        document.querySelector(".licon").style.display = "block";
+        document.querySelector("#lname").style.border = "1px solid hsl(0, 100%, 74%)"
+      } else {
+        document.querySelector(".lnameerror").style.display = "none";
+        document.querySelector(".licon").style.display = "none";
+      }
+
+      if (!email) {
+        document.querySelector(".emailerror").style.display = "block";
+        document.querySelector(".eicon").style.display = "block";
+      } else{
+        document.querySelector(".emailerror").style.display = "none";
+        document.querySelector(".eicon").style.display = "none";
+      } 
+
+      if(email.match(mailformat)) {
+        alert("vaild email");
+      } else {
+        document.querySelector("#email").value = "";
+        document.querySelector("#email").placeholder = "example@email/com";
+        document.querySelector("#email").style.border = "1px solid hsl(0, 100%, 74%)"
+      }
+
+      if (!password) {
+        document.querySelector(".passworderror").style.display = "block";
+        document.querySelector(".picon").style.display = "block";
+        document.querySelector("#password").style.border = "1px solid hsl(0, 100%, 74%)"
+      }else {
+        document.querySelector(".passworderror").style.display = "none";
+        document.querySelector(".picon").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
